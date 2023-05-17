@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Task-Board/static/css/main.0fd2e97d.css",
+    "main.js": "/Task-Board/static/js/main.3fecdd31.js",
+    "index.html": "/Task-Board/index.html",
+    "main.0fd2e97d.css.map": "/Task-Board/static/css/main.0fd2e97d.css.map",
+    "main.3fecdd31.js.map": "/Task-Board/static/js/main.3fecdd31.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fd2e97d.css",
+    "static/js/main.3fecdd31.js"
+  ]
+}
