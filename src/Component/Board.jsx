@@ -89,7 +89,7 @@ const Board = () => {
 
       <div className="createList">
         <div className="heading">Create New List</div>
-        <img src="http://surl.li/hbufu" alt="plus" onClick={createList} />
+        <img src="https://rb.gy/093ta" alt="plus" onClick={createList} />
       </div>
     </div>
   );

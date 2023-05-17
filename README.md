@@ -1,7 +1,6 @@
 # Task Board
-![Task Board](https://github.com/sayanghoshofficial/Task-Board/assets/99132893/0e398dd5-3cbf-433b-9b60-4339a1700668)
-
-
+This is the Hosting Page [Drag & Drop](https://sayanghoshofficial.github.io/Task-Board)
+![Task Board](https://github.com/sayanghoshofficial/Task-Board/assets/99132893/f5872414-b065-4e53-b445-ad25950b9936)
 
 # Getting Started with Create React App
 
