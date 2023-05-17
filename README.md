@@ -1,3 +1,8 @@
+# Task Board
+![Task Board](https://github.com/sayanghoshofficial/Task-Board/assets/99132893/0e398dd5-3cbf-433b-9b60-4339a1700668)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

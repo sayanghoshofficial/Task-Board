@@ -6,45 +6,69 @@ import Items from "./Items";
 const Board = () => {
   const [newList, setNewList] = useState([]);
   const [draggableItem, setDraggableItem] = useState(null);
-  const data = taskToDo;
+  const [data, setData] = useState(taskToDo);
 
   const createList = () => {
     const list = [...newList];
     list.push({
       heading: `List ${list.length + 2}`,
-      items: [], // Initialize items as an empty array
+      items: [],
     });
     setNewList(list);
   };
-  
 
   const handleDragStart = (e, item) => {
-    if(newList.length === 0){return}
+    if (newList.length === 0) {
+      return;
+    }
+
+    const newLists = [...newList];
+    const sourceListIndex = newLists.findIndex((list) =>
+      list.items.includes(item)
+    );
+    if (sourceListIndex !== -1) {
+      newLists[sourceListIndex].items = newLists[sourceListIndex].items.filter(
+        (i) => i !== item
+      );
+      setNewList(newLists);
+    }
+
     setDraggableItem(item);
   };
 
   const handleDragEnter = (e, targetListIndex) => {
-    e.preventDefault(); // Prevent default behavior to enable drop
-  
+    e.preventDefault();
     if (draggableItem === null) return;
-  
+
     const newLists = [...newList];
     const draggedItem = draggableItem;
-  
-    // Remove the dragged item from its previous list
-    const sourceListIndex = newLists.findIndex((list) => list.items.includes(draggedItem));
-    if (sourceListIndex !== -1) {
-      newLists[sourceListIndex].items = newLists[sourceListIndex].items.filter((item) => item !== draggedItem);
-    }
-  
-    // Add the dragged item to the target list
-    newLists[targetListIndex].items.push(draggedItem);
-  
-    setNewList(newLists);
+
+    let sourceListIndex = -1;
+    newLists.forEach((list, index) => {
+      if (list.items.includes(draggedItem)) {
+        list.items = list.items.filter((item) => item !== draggedItem);
+        sourceListIndex = index;
+      }
+    });
+
+    newLists[targetListIndex].items.push(
+      <Items
+        task={draggedItem}
+        onDragStart={(e) => handleDragStart(e, draggedItem)}
+        onDragEnter={(e) => handleDragEnter(e, 0)}
+      />
+    );
+
     setDraggableItem(null);
+    setNewList(newLists);
+
+    const updatedData = [...data];
+    if (sourceListIndex !== -1) {
+      updatedData[sourceListIndex].items = newLists[sourceListIndex].items;
+    }
+    updatedData[targetListIndex].items = newLists[targetListIndex].items;
+    setData(updatedData);
   };
-  
-  
 
   return (
     <div className="board">
@@ -60,11 +84,11 @@ const Board = () => {
         ))}
       </div>
       {newList.map((list, index) => (
-        <List key={index} list={list} />
+        <List key={index} list={list} onDragEnter={handleDragEnter} />
       ))}
 
       <div className="createList">
-        <div className="heading">Create New List </div>
+        <div className="heading">Create New List</div>
         <img src="http://surl.li/hbufu" alt="plus" onClick={createList} />
       </div>
     </div>
