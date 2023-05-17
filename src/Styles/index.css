@@ -41,8 +41,8 @@ code {
   overflow:auto;
 }
 .list{
-  width: 200px;
-  min-width: 200px;
+  width: 220px;
+  min-width: 220px;
   height: 400px;
   margin: 20px;
   background-color: #f0f0f0;
@@ -77,8 +77,8 @@ code {
   cursor: pointer;
 }
 .createList{
-  width: 200px;
-  min-width: 200px;
+  width: 220px;
+  min-width: 220px;
   height: 100px;
   margin: 20px;
   background-color: #f0f0f0;
