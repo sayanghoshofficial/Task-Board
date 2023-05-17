@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
+import Board from "./Board";
 
-
-
-export {Navbar};
+export { Navbar, Board };

@@ -12,13 +12,13 @@ code {
     monospace;
 }
 .App{
-  width: 100%;
+  width: auto;
 }
 
 .navbar{
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 5vh;
   justify-content: space-between;
   align-items: center;
   background-color: #d9d9d9;
@@ -32,4 +32,63 @@ code {
 }
 .user{
   margin-left: 10px;
+}
+.board{
+  width: auto;
+  height: 95vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow:auto;
+}
+.list{
+  width: 200px;
+  min-width: 200px;
+  height: 400px;
+  margin: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #bbbbbb;
+  /* display: flex;
+  flex-direction: column; */
+  
+}
+.heading{
+ text-align: center;
+ width: 100%;
+ background-color: #d9d9d9;
+}
+.heading > img{
+
+  width: 15px;
+  margin: auto;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.item{
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+.item > input{
+  background-color: #ffeded;
+  cursor: pointer;
+}
+.item > label{
+  cursor: pointer;
+}
+.createList{
+  width: 200px;
+  min-width: 200px;
+  height: 100px;
+  margin: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #bbbbbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.createList > img{
+  margin:auto;
+  width: 70px;
+  cursor: pointer;
 }
